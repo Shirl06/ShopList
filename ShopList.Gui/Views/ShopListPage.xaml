@@ -52,7 +52,8 @@
             <Button
                 Grid.Row="1"
                 Grid.Column="2"
-                Text="X"/>
+                Text="X"
+                Command="{Binding EliminarShopListItemCommand}"/>
         </Grid>
 
         <CollectionView
@@ -60,6 +61,7 @@
             Grid.Column="0"
             SelectionMode="Single"
             ItemsSource="{Binding Items}"
+            SelectedItem="{Binding ItemSeleccionado, Mode=TwoWay}"
             EmptyView="Aún no se han registrado productos"
             BackgroundColor="#f0f0f0">
 

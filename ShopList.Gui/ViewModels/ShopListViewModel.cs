@@ -11,8 +11,10 @@ namespace ShopList.Gui.ViewModels
         private string _nombreDelArticulo = string.Empty;
         [ObservableProperty]
         private int _cantidadAComprar = 1;
+        [ObservableProperty]
+        private Item? _itemSeleccionado;
         public ObservableCollection<Item> Items { get; }
-       
+
         public ShopListViewModel()
         {
             Items = new ObservableCollection<Item>();
@@ -42,7 +44,13 @@ namespace ShopList.Gui.ViewModels
         [RelayCommand]
         public void EliminarShopListItem()
         {
-
+            if (ItemSeleccionado is null)
+                return;
+            if (Items.Contains(ItemSeleccionado))
+            {
+                Items.Remove(ItemSeleccionado);
+            }
+            ItemSeleccionado = null;
         }
         private void CargarDatos()
         {
