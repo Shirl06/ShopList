@@ -61,7 +61,7 @@
             Grid.Column="0"
             SelectionMode="Single"
             ItemsSource="{Binding Items}"
-            SelectedItem="{Binding ItemSeleccionado, Mode=TwoWay}"
+            SelectedItem="{Binding ItemSeleccionado}"
             EmptyView="Aún no se han registrado productos"
             BackgroundColor="#f0f0f0">
 
